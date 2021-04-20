@@ -1,52 +1,749 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A cool thing made with Glitch">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B&BShoop</title>
+  <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!--Font awesome CDN-->
+    <script src="https://kit.fontawesome.com/1d20b47144.js" crossorigin="anonymous"></script>
+  <!--Styles-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.min.css"/>
+  <!--Owel carousel Style-->
+  <link rel="stylesheet" href="owlcarousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="owlcarousel/owl.theme.default.min.css">
 
-    <title>Welcome to Glitch!</title>
 
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <header>
+    <div class="navigation-menu">
+    <div class="burger-menu">
+      <span class="line1"></span>
+      <span class="line2"></span>
+      <span class="line3"></span>
+    </div>
+    <!--user Container-->
+    <div class="user-nav">
+      <i class="fas fa-times"></i>
+        <div class="search-menu">
+          <input type="text" placeholder="Seacrh">
+          <button><img src="assets/svg's/search.svg" alt=""></button>
+        </div>
+        <div class="menu-items">
+          <div class="accordion" id="accordionExample">
+            <div class="extended-list">
+                  <button class="menu-btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Compte
+                  </button>
 
-    <!-- import the webpage's client-side javascript file -->
-    <script src="/script.js" defer></script>
-  </head>
-  <body>
-    <header>
-      <h1>A Dream of the Future</h1>
-    </header>
+          
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body p-0">
+                  <ul class="user-menu-list">
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Commandes</a></li>
+                    <li><a href="#">Liste d'envies</a></li>
+                    <li><a href="#">Comparer</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="extended-list">
+                  <button class="menu-btn collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Magasin
+                  </button>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body p-0">
+                  <ul class="store-menu-list p-0">
+                    <li><a href="#">Femmes</a></li>
+                    <li><a href="#">Hommes</a></li>
+                    <li><a href="#">Enfants</a></li>
+                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Makeup</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul class="mobile-menu-links p-0">
+            <li><a href="#">Stores</i></a></li>
+            <li><a href="#">Contact us</i></a></li>
+            <li><a href="#">About us </a></li>
+          </ul>         
+        </div>
+        <div class="sell-with-usbtn">
+          <a href="_blank">Sell With Us</a>
+        </div>
+        <ul class="social-media-icons">
+          <li><a href="_blank"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="_blank"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="_blank"><i class="fab fa-linkedin"></i></a></li>
 
-    <main>
-      <h2>Oh hi,</h2>
-
-      <p>Tell me your hopes and dreams:</p>
-
-      <form>
-        <label>
-          New Dream
-          <input name="dream" type="text" maxlength="100" required placeholder="Dreams!">
-        </label>
-        <button type="submit" id="submit-dream">Add Dream</button>
-      </form>
-
-      <section class="dreams">
-        <ul id="dreams">
-          <em>loading dreams&hellip;</em>
         </ul>
-      </section>
-    </main>
+      </div>
+    <!--End user container-->
+    <a class="navbar-brand" href="#">B&BSHoop</a>
+    <nav>
+      <ul class="icon-list">
+        <li class="search-input">
+          <img src="assets/svg's/search.svg" alt="">
+          <div class="search-box">
+            <input type="text" placeholder="search">
+            <button type="submit"><img src="assets/svg's/search.svg" alt=""></button>
+        </li>
+        <li id="navCart" class="nav-cart">
+          <img src="assets/svg's/bag.svg" alt="">
+          <span class="cart-count"></span> <!-- nbr article au panier -->
+        </li>
+        <!--Cart container-->
+        <div class="cart-container">
+          <i id="cart-close" class="fas fa-times cart-close-botton"></i>
+          <div class="cart-container-inner">
+            <h6>Cart</h6>
+            <ul class="cart-items">
+              <li>
+                <div class="cart-products">
+                  <img src="assets/product14.jpg" alt="product">
+                  <div class="cart-product-details">
+                    <a href="_blank">Produit</a>
+                    <span>1 x</i></span> <span><strong>200 EGP</strong></span>
+                  </div>
+                  <button type="reset"><i class="far fa-times-circle"></i></button>
+                </div>
+              </li>
+              <li>
+                <div class="cart-products">
+                  <img src="images/pull.jpg" alt="product">
+                  <div class="cart-product-details">
+                    <a href="_blank">Produit</a>
+                    <span>1 x</i></span> <span><strong>200 EGP</strong></span>
+                  </div>
+                  <button type="reset"><i class="far fa-times-circle"></i></button>
+                </div>
+              </li>
+            </ul> 
+            <ul class="cart-container-prices">
+              <li>
+                <span>Sub total:</span>
+                <span class="price">400 EGP</span>
+              </li>
+              <li>
+                <span>Total:</span>
+                <span class="price">400 EGP</span>
+              </li>
+            </ul>
+            <div class="cart-container-btn">
+              <a href="_blank">view cart <i class="fa fa-shopping-bag"></i></a>
+              <a href="_blank">checkout <i class="fas fa-external-link-alt"></i></a>
 
-    <footer>Made with <a href="https://glitch.com">Glitch</a>!</footer>
+            </div>           
+          </div>
 
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:2em;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js" defer></script>
-  </body>
+        </div>
+        <!--end cart container-->
+        <li class="user-drop-down">
+          <img src="assets/svg's/user.svg" alt="">
+          <div class="user-container">
+            <div class="user-default-button">
+              <a href="_blank">Se connecter</a>
+              <a href="_blank">Créer un compte</a>
+              </div>
+              <ul class="user-default-dropdown">
+                <li><a href="#">Profil</a></li>
+                <li><a href="#">Commandes</a></li>
+                <li><a href="#">Liste d'envie</a></li>
+                <li><a href="#">Comparer</a></li>
+              </ul>
+            </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!--Start Slider-->
+  <div class="owl-carousel main-slider">
+    <div class="item">
+      <img src="assets/1.jpg" alt="">
+      <div class="slider-inner-container">
+        <h4 class="animate__animated animate__fadeInLeft animate__delay-.5s">Obtenez 30% de réduction & livraison gratuite</h4>
+        <h1 class="animate__animated animate__fadeInLeft animate__delay-1s">Solde d'été</h1>
+        <p class="animate__animated animate__fadeInLeft animate__delay-1s">Une sélection exclusive des tendances de cette saison.</p>
+        <span class="animate__animated animate__fadeInLeft animate__delay-.5s">Exclusivement en ligne</span>
+        <a class="animate__animated animate__fadeInLeft animate__delay-.8s" href="shop.html">Acheter</a>
+      </div>
+    </div>
+    <div class="item">
+      <img src="assets/3.jpg" alt="">
+      <div class="slider-inner-container">
+        <h4>Obtenez 30% de réduction & livraison gratuite</h4>
+        <h1>Solde d'été</h1>
+        <p>Une sélection exclusive des tendances de cette saison.</p>
+        <span>Exclusivement en ligne</span>
+        <a href="shop.html">Acheter</a>
+      </div>
+    </div>
+  </div>
+  <!--End Slider-->
+  </header>
+  <section id="main">
+    <div class="container-fluid m-auto ">
+      <div class="row mb-5">
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="banner-category">
+            <img src="assets/bn-8-1.jpg" alt="">
+            <div class="banner-inner">
+              <h1>Women<br>Lookbook</h1>
+              <a href="#">Acheter</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="banner-category">
+            <img src="assets/bn-8-2.jpg" alt="">
+            <div class="banner-inner">
+              <h1>Collection<br>Hommes</h1>
+              <a href="#">Acheter</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4 col-lg-4">
+          <div class="banner-category">
+            <img src="assets/bn-8-3.jpg" alt="">
+            <div class="banner-inner">
+              <h1>Enfants<br>7-14 ans</h1>
+              <a href="#">Acheter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+
+      <div class="row mb-5">
+        <div class="col-lg-12 m-auto">
+          <div class="main-section-offer">
+            <span> 20% de réduction 🔥🔥 en utilisant le code "Spring20"</span>
+           </div>
+        </div>
+      </div>
+
+      <div class="container">
+      <div class="row  mb-5">
+        <div class="col-12 product-title text-center mb-5">
+          <h2>PRODUITS POPULAIRES</h2>
+
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="assets/product10.jpg" alt="">
+                <ul class="product-card-options">
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                  <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-inner-content">
+                <a href="#">Capuche</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            <div class="product-price-rate">
+              <span> <strike>50 €</strike> </span>
+              <span>35 €</span>
+  
+            </div>
+            </div>
+            <div class="add-to-cart-btn">
+              <a href="#">Ajouter au panier</a>
+            </div>
+          </div>
+  
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="assets/product10.jpg" alt="">
+                <ul class="product-card-options">
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                  <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-inner-content">
+                <a href="#">Capuche</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            <div class="product-price-rate">
+              <span> <strike>50 €</strike> </span>
+              <span>35 €</span>
+  
+            </div>
+            </div>
+            <div class="add-to-cart-btn">
+              <a href="#">Ajouter au panier</a>
+            </div>
+          </div>
+  
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="assets/product10.jpg" alt="">
+                <ul class="product-card-options">
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                  <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                </ul>
+                <span class="sale-item-box">Sale</span>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-inner-content">
+                <a href="#">Capuche</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            <div class="product-price-rate">
+              <span> <strike>50 €</strike> </span>
+              <span>35 €</span>
+  
+            </div>
+            </div>
+            <div class="add-to-cart-btn">
+              <a href="#">Ajouter au panier</a>
+            </div>
+          </div>
+  
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="assets/product10.jpg" alt="">
+                <ul class="product-card-options">
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                  <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-inner-content">
+                <a href="#">Capuche</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            <div class="product-price-rate">
+              <span> <strike>50 €</strike> </span>
+              <span>35 €</span>
+  
+            </div>
+            </div>
+            <div class="add-to-cart-btn">
+              <a href="#">Ajouter au panier</a>
+            </div>
+          </div>
+  
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="assets/product10.jpg" alt="">
+                <ul class="product-card-options">
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                  <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                </ul>
+                <span class="sale-item-box">Sale</span>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-inner-content">
+                <a href="#">Capuche</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            <div class="product-price-rate">
+              <span> <strike>50 €</strike> </span>
+              <span>35 €</span>
+  
+            </div>
+            </div>
+            <div class="add-to-cart-btn">
+              <a href="#">Ajouter au panier</a>
+            </div>
+          </div>
+  
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="assets/product10.jpg" alt="">
+                <ul class="product-card-options">
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                  <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-inner-content">
+                <a href="#">Capuche</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            <div class="product-price-rate">
+              <span> <strike>50 €</strike> </span>
+              <span>35 €</span>
+  
+            </div>
+            </div>
+            <div class="add-to-cart-btn">
+              <a href="#">Ajouter au panier</a>
+            </div>
+          </div>
+  
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 ">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="assets/product10.jpg" alt="">
+                <ul class="product-card-options">
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                  <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                </ul>
+                <span class="sale-item-box">Sale</span>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-inner-content">
+                <a href="#">Capuche</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            <div class="product-price-rate">
+              <span> <strike>50 €</strike> </span>
+              <span>35 €</span>
+  
+            </div>
+            </div>
+            <div class="add-to-cart-btn">
+              <a href="#">Ajouter au panier</a>
+            </div>
+          </div>
+  
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="product-card">
+            <div class="product-card-img">
+              <img src="assets/product10.jpg" alt="">
+                <ul class="product-card-options">
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                  <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                  <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                </ul>
+            </div>
+            <div class="product-card-content">
+              <div class="product-card-inner-content">
+                <a href="#">Capuche</a>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+            <div class="product-price-rate">
+              <span> <strike>50 €</strike> </span>
+              <span>35 €</span>
+  
+            </div>
+            </div>
+            <div class="add-to-cart-btn">
+              <a href="#">Ajouter au panier</a>
+            </div>
+          </div>
+  
+          </div>
+        </div>
+      </div> 
+    </div>  
+      <div class="row mb-5">
+        <div class="col-md-12 m-auto">
+          <div class="banner">
+            <a href="#">
+              <img src="assets/banner5.jpg">
+            </a>
+            <div class="banner-inner-content">
+              <h3>Collection de printemps</h3>
+              <h2>jusq'à -50%</h2>
+              <p>
+                une collection exclusive de vêtements de cette saison
+                <span>exclusivement en ligne!</span>
+              </p>
+              <a href="#">Acheter</a>
+            </div>
+          </div>
+
+        </div>
+        </div>
+        <div class="container ">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="col-12 product-title text-center mb-5">
+              <h2>Nos catégories</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 text-center m-auto product-gallery-filter-list ">
+            <ul>
+              <li class="filter-button" data-filter="*" >All</li>
+              <li class="filter-button" data-filter=".shoe" >Shoe</li>
+              <li class="filter-button" data-filter=".backpacks" >All</li>
+              <li class="filter-button" data-filter=".accessories" >All</li>
+            </ul>
+          </div>
+        </div>
+          <div class="row product-gallery-filter-cards">
+            <div class="col-md-3 col-sm-6 filter backpacks">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <img src="assets/product3.jpg" alt="">
+                    <ul class="product-card-options">
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                      <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-card-content">
+                  <div class="product-card-inner-content">
+                    <a href="#">Doudoune</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <div class="product-price-rate">
+                  <span> <strike>70 €</strike> </span>
+                  <span>55 €</span>
+      
+                </div>
+                </div>
+                <div class="add-to-cart-btn">
+                  <a href="#">Ajouter au panier</a>
+                </div>
+              </div>
+      
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 filter shoe">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <img src="assets/product3.jpg" alt="">
+                    <ul class="product-card-options">
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                      <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-card-content">
+                  <div class="product-card-inner-content">
+                    <a href="#">Doudoune</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <div class="product-price-rate">
+                  <span> <strike>70 €</strike> </span>
+                  <span>55 €</span>
+      
+                </div>
+                </div>
+                <div class="add-to-cart-btn">
+                  <a href="#">Ajouter au panier</a>
+                </div>
+              </div>
+      
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 filter backpacks">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <img src="assets/product3.jpg" alt="">
+                    <ul class="product-card-options">
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                      <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-card-content">
+                  <div class="product-card-inner-content">
+                    <a href="#">Doudoune</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <div class="product-price-rate">
+                  <span> <strike>70 €</strike> </span>
+                  <span>55 €</span>
+      
+                </div>
+                </div>
+                <div class="add-to-cart-btn">
+                  <a href="#">Ajouter au panier</a>
+                </div>
+              </div>
+      
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 filter accessories">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <img src="assets/product3.jpg" alt="">
+                    <ul class="product-card-options">
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                      <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-card-content">
+                  <div class="product-card-inner-content">
+                    <a href="#">Doudoune</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <div class="product-price-rate">
+                  <span> <strike>70 €</strike> </span>
+                  <span>55 €</span>
+      
+                </div>
+                </div>
+                <div class="add-to-cart-btn">
+                  <a href="#">Ajouter au panier</a>
+                </div>
+              </div>
+      
+              </div>
+            </div> 
+            <div class="col-md-3 col-sm-6 filter backpacks">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <img src="assets/product3.jpg" alt="">
+                    <ul class="product-card-options">
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                      <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-card-content">
+                  <div class="product-card-inner-content">
+                    <a href="#">Doudoune</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <div class="product-price-rate">
+                  <span> <strike>70 €</strike> </span>
+                  <span>55 €</span>
+      
+                </div>
+                </div>
+                <div class="add-to-cart-btn">
+                  <a href="#">Ajouter au panier</a>
+                </div>
+              </div>
+      
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 filter accessories">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <img src="assets/product3.jpg" alt="">
+                    <ul class="product-card-options">
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                      <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-card-content">
+                  <div class="product-card-inner-content">
+                    <a href="#">Doudoune</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <div class="product-price-rate">
+                  <span> <strike>70 €</strike> </span>
+                  <span>55 €</span>
+      
+                </div>
+                </div>
+                <div class="add-to-cart-btn">
+                  <a href="#">Ajouter au panier</a>
+                </div>
+              </div>
+      
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 filter accessories">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <img src="assets/product3.jpg" alt="">
+                    <ul class="product-card-options">
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                      <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-card-content">
+                  <div class="product-card-inner-content">
+                    <a href="#">Doudoune</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <div class="product-price-rate">
+                  <span> <strike>70 €</strike> </span>
+                  <span>55 €</span>
+      
+                </div>
+                </div>
+                <div class="add-to-cart-btn">
+                  <a href="#">Ajouter au panier</a>
+                </div>
+              </div>
+      
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6 filter shoe">
+              <div class="product-card">
+                <div class="product-card-img">
+                  <img src="assets/product3.jpg" alt="">
+                    <ul class="product-card-options">
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
+                      <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
+                      <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                    </ul>
+                </div>
+                <div class="product-card-content">
+                  <div class="product-card-inner-content">
+                    <a href="#">Doudoune</a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <div class="product-price-rate">
+                  <span> <strike>70 €</strike> </span>
+                  <span>55 €</span>
+      
+                </div>
+                </div>
+                <div class="add-to-cart-btn">
+                  <a href="#">Ajouter au panier</a>
+                </div>
+              </div>
+      
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </div>
+        </div>
+        </div>
+
+
+  <!--Bootstrap CDN-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="js/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!--Owel carousel js-->
+    <script src="owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      $('document').ready(function(){
+        $('.product-gallery-filter-cards').isotope({
+    itemSelector: '.filter',
+    layoutMode: 'fitRows',
+  });
+
+  $('.filter-button').on('click', function() {
+  var selector = $(this).attr('data-filter');
+    $('.product-gallery-filter-cards').isotope({
+      filter: selector
+    });
+    return false
+  })
+      })
+    </script>
+</body>
 </html>
