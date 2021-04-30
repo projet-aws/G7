@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">      
+   <title>B&BShoop-Connexion</title>
+   <!--Bootstrap CDN-->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   <!--Font awesome CDN-->
+   <script src="https://kit.fontawesome.com/1d20b47144.js" crossorigin="anonymous"></script>
+    <!--Styles-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/css/animate.css">
+    <!--Owel carousel Style-->
+    <link rel="stylesheet" href="/stylesheets/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/stylesheets/owlcarousel/owl.theme.default.min.css">
+
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container-fluid p-0 page-card">
+    <div class="bread-cumber text-center">
+      <h3>Connexion</h3>
+    </div>
+<div class="container-fluid container-narrow-card">
+  <div class="row">
+    <div class="col-12">
+      <ul class="login-social-icon">
+        <li><a data-toggle="tooltip" data-placement="top" title="Login with Facebook" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a data-toggle="tooltip" data-placement="top" title="Login with G-mail" href="https://accounts.google.com/signin/v2/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&service=mail&sacu=1&rip=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin"><i class="fab fa-google"></i></a></li>
+        <li><a data-toggle="tooltip" data-placement="top" title="Login with Twitter" href="https://twitter.com/login?lang=fr"><i class="fab fa-twitter"></i></a></li>
+
+      </ul>
+    </div>
+    <div class=" col-lg-3 col-md-12 col-sm-12 col-xs-12 text-center m-auto form-log-in">
+        <form method="POST" class="form-group" action="/login">
+          <div class="input-with-icn">
+          <input class="input-style mail-icn" name="email" type="text" placeholder="E-mail" required>
+          <i class="far fa-envelope"></i>
+        </div>
+        <div class="input-with-icn">
+          <input class="input-style lock-icn" name="password" type="Password" placeholder="mot de passe">
+          <i class="fas fa-lock"></i>
+        </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center mb-4">
+    <a class="password-foget" href="_blank">mot de passe oublié ?</a>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 text-center m-auto">
+      <button class="registration-signin-btn" type="submit">se connecter</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center mt-4 mb-4">
+      <h5>new to B&BShoop</h5>
+      <a class="register-btn" href="registration.ejs">s'inscrire</a>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+   <!--Bootstrap CDN-->
+   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   <!--Owel carousel js-->
+   <script src="/stylesheets/owlcarousel/owl.carousel.min.js"></script>
+   <script src="/javascripts/js/main.js"></script>
+</body>
+</html>
