@@ -16,7 +16,7 @@ router.post('/login', function(req, res){
         if(err) throw err;
         if(result.length && bcrypt.compareSync(password, result[0].password)){
             req.session.email= email;
-            res.redirect('/')
+            res.redirect('/shop')
 
         }else{
             res.render('login',{alertMsg:"Votre adresse ou votre mot de passe est incorrect"});
