@@ -8,6 +8,9 @@ var bcrypt = require('bcrypt');
 router.get('/login', function(req, res, next) {
   res.render('login');
 });
+router.get('/registration', function (req, res, next) {
+    res.render('registration');
+});
 router.post('/login', function(req, res){
     var email = req.body.email;
     var password = req.body.password;
