@@ -28,155 +28,30 @@
       <div class="shop-filter">
         <h5>Category</h5>
         <div class="accordion mb-4 mt-4" id="accordionExample">
+          <% for(var i = 0; i< categorie.length; i++) { %>
           <div class="card-filter">
             <div id="headingOne">
               <h2 class="mb-0">
-                <button class="filter-btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Women
-                </button>
+                <a href="/shop?categorie=<%= categorie[i].id%>" class="filter-btn btn-block text-left" type="button">
+                  <%= categorie[i].nomCategorie%> 
+                </a>
               </h2>
             </div>
-        
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-              <div class="card-body">
-                <ul class="filter-sub-category">
-                  <li><a href="_blank">Skirts <span>(2)</span></a></li>
-                  <li><a href="_blank">Dress <span>(12)</span></a></a></li>
-                  <li><a href="_blank">Shirt <span>(8)</span></a></a></li>
-                  <li><a href="_blank">Jeans <span>(9)</span></a></a></li>
-
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card-filter">
-            <div id="headingTwo">
-              <h2 class="mb-0">
-                <button class="filter-btn  btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Men
-                </button>
-              </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-              <div class="card-body">
-                <div class="card-body">
-                  <ul class="filter-sub-category">
-                    <li><a href="_blank">T-shirt <span>(2)</span></a></li>
-                    <li><a href="_blank">Jeans <span>(12)</span></a></a></li>
-                    <li><a href="_blank">Shirt <span>(8)</span></a></a></li>
-                    <li><a href="_blank">Polo <span>(9)</span></a></a></li>
-  
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card-filter">
-            <div id="headingThree">
-              <h2 class="mb-0">
-                <button class="filter-btn  btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Kids
-                </button>
-              </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-              <div class="card-body">
-                <ul class="filter-sub-category">
-                  <li><a href="_blank">T-shirt <span>(2)</span></a></li>
-                  <li><a href="_blank">Jeans <span>(12)</span></a></a></li>
-                  <li><a href="_blank">Shirt <span>(8)</span></a></a></li>
-                  <li><a href="_blank">Polo <span>(9)</span></a></a></li>
-
-                </ul>
-            </div>
-          </div>
         </div>
-        <div class="card-filter">
-          <div id="headingFour">
-            <h2 class="mb-0">
-              <button class="filter-btn  btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                Acessories
-              </button>
-            </h2>
-          </div>
-          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-            <div class="card-body">
-              <ul class="filter-sub-category">
-                <li><a href="_blank">Hand Made <span>(2)</span></a></li>
-                <li><a href="_blank">Ring <span>(12)</span></a></a></li>
-                <li><a href="_blank">Glasses <span>(8)</span></a></a></li>
-                <li><a href="_blank">Bagpack <span>(9)</span></a></a></li>
-
-              </ul>
-          </div>
-        </div>
+        <% } %>
       </div>
-      <div class="card-filter">
-        <div id="headingFive">
-          <h2 class="mb-0">
-            <button class="filter-btn  btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-              Make up
-            </button>
-          </h2>
-        </div>
-        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-          <div class="card-body">
-            <ul class="filter-sub-category">
-              <li><a href="_blank">Hand Made <span>(2)</span></a></li>
-              <li><a href="_blank">Ring <span>(12)</span></a></a></li>
-              <li><a href="_blank">Glasses <span>(8)</span></a></a></li>
-              <li><a href="_blank">Bagpack <span>(9)</span></a></a></li>
-
-            </ul>
-        </div>
-      </div>
-    </div>
-      </div>
-      <div class="filter-price-range mb-4 mt-4 ">
-        <h5>Price</h5>
-        <div class="slidecontainer">
-          <input type="range" min="500" max="5000" value="1" class="slider" id="myRange">
-          <button class="filter-sub" type="submit">Filter</button>
-        </div>
-      </div>
-      <div class="Filter-size mb-4 mt-4">
-        <h5>Size</h5>
-        <ul>
-          <li>
-            <span>S</span>
-            <div class="fliter-check-box-container">
-              <input class="filter-check-box" type="checkbox">
-            </div>
-          </li>
-          <li>
-            <span>M</span>
-            <div class="fliter-check-box-container">
-              <input class="filter-check-box" type="checkbox">
-            </div>
-          </li>
-          <li>
-            <span>L</span>
-            <div class="fliter-check-box-container">
-            <input class="filter-check-box" type="checkbox">
-          </div>
-          </li>
-          <li>
-            <span>XL</span>
-            <div class="fliter-check-box-container">
-              <input class="filter-check-box" type="checkbox">
-            </div>
-          </li>
-        </ul>
-
-      </div>
+     
+      
     </div>
   </div>
+  <% if(data.length) { %>
   <div class="col-lg-9">
     <div class="row">
+      <% for(var i = 0; i< data.length; i++) { %>
       <div class="col-md-3 col-sm-6">
         <div class="product-card">
           <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
+            <img src="<%= data[i].image%>" alt="">
               <ul class="product-card-options">
                 <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
                 <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
@@ -186,11 +61,11 @@
           </div>
           <div class="product-card-content">
             <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+              <a href="#"><%= data[i].nomProduit%></a>
+              <p><%= data[i].description%> </p>
           <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
+            <span> <strike><%= data[i].prix + 500%> €</strike> </span>
+            <span><%= data[i].prix%> €</span>
 
           </div>
           </div>
@@ -201,314 +76,7 @@
 
         </div>
       </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="product-card">
-          <div class="product-card-img">
-            <img src="/images/assets/product10.jpg" alt="">
-              <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
-              </ul>
-              <span class="sale-item-box">Sale</span>
-          </div>
-          <div class="product-card-content">
-            <div class="product-card-inner-content">
-              <a href="#">Water proof Jacket</a>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-          <div class="product-price-rate">
-            <span> <strike>4,000 EGP</strike> </span>
-            <span>3,500 EGP</span>
-
-          </div>
-          </div>
-          <div class="add-to-cart-btn">
-            <a href="#">add to cart</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
+      <% } %>
       
       
       
@@ -533,7 +101,7 @@
 
     </div>
   </div>
-  
+  <% } %>
   
 </div>
 </div>
