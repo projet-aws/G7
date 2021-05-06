@@ -6,6 +6,8 @@ var logger = require('morgan');
 var session = require('express-session');
 
 
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -68,3 +70,6 @@ app.listen(3000, () =>{
   console.log('serveur demarrer');
 });
 module.exports = app;
+
+app.set('view engine', 'ejs');
+  app.set('views', path.join(__dirname, 'views'));
