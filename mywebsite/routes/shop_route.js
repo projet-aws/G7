@@ -12,7 +12,6 @@ router.get('/shop', function(req, res, next) {
  
         if(err) {
             req.flash('error', err);
-            // render to views/books/index.ejs
               
         } else {
             produit = rows;
@@ -42,7 +41,6 @@ router.get('/shop', function(req, res, next) {
  
 		        if(err) {
 		            req.flash('error', err);
-		            // render to views/books/index.ejs
 		              
 		        } else {
 		            categorie = rows;

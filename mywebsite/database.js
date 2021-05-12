@@ -8,6 +8,6 @@ var conn = mysql.createConnection({
 }); 
 conn.connect(function(err) {
   if (err) throw err;
-  console.log('la conneion à la base est reussi !');
+  console.log('la conneion à la base est réussi !');
 });
-module.exports = conn;
+module.exports = conn; 
