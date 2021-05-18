@@ -48,14 +48,14 @@
   <div class="col-lg-9">
     <div class="row">
       <% for(var i = 0; i< data.length; i++) { %>
+      <input type="hidden" id="inputhidden" value="<%= data[i].id %>">
       <div class="col-md-3 col-sm-6">
         <div class="product-card">
           <div class="product-card-img">
             <img src="<%= data[i].image%>" alt="">
               <ul class="product-card-options">
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>
-                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to compare"><i class="fas fa-retweet"></i></button></li>                
-                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal"><i class="fas fa-search"></i></a></li>
+                <li><button  data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="far fa-heart"></i></button></li>               
+                <li  data-toggle="tooltip" id="myButton" data-placement="bottom" title="Quick view"><a href="#"  data-toggle="modal" data-target="#myModal" data-id="<%= data[i].id%>" class="btnModal"><i class="fas fa-search"></i></a></li>
               </ul>
               <span class="sale-item-box">Sale</span>
           </div>
@@ -64,26 +64,16 @@
               <a href="#"><%= data[i].nomProduit%></a>
               <p><%= data[i].description%> </p>
           <div class="product-price-rate">
-            <span> <strike><%= data[i].prix + 50%> €</strike> </span>
             <span><%= data[i].prix%> €</span>
-
           </div>
           </div>
           <div class="add-to-cart-btn">
             <a href="#">add to cart</a>
           </div>
         </div>
-
         </div>
       </div>
-      <% } %>
-      
-      
-      
-
-      
-
-      
+      <% } %>   
     </div>
   </div>
   <% } %>
@@ -95,7 +85,7 @@
 
 
 
-
+       
         <!--Start Modal box-->
         <div class="modal fade bd-example-modal-xl" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-xl" role="document">
@@ -108,19 +98,20 @@
               <div class="modal-body">
                 <div class="row">
                   <div class="col-lg-5 product-thumbnail text-center">
-                    <div class="imgBox"><a href="/images/assets/product14.jpg" class="image-link"><img class="img-fluid mb-2"  src="/assets/product14.jpg" alt=""></a></div>
+                    <div class="imgBox"><a href="/public/images/images/assets/product14.jpg" class="image-link"><img class="img-fluid mb-2"  src="assets/product14.jpg" alt=""></a></div>
                     <div class="owl-carousel mb-3">
-                      <div class="item"><a href="/images/assets/product14.jpg" target="imgBox"><img class="img-responsive" src="/assets/product14.jpg" alt=""></a></div>
-                      <div class="item"><a href="/images/assets/product10.jpg" target="imgBox"><img class="img-responsive" src="/assets/product10.jpg" alt=""></a></div>
-                      <div class="item"><a href="/images/assets/product12.jpg" target="imgBox"><img class="img-responsive" src="/assets/product12.jpg" alt=""></a></div>
-                      <div class="item"><a href="/images/assets/product10.jpg" target="imgBox"><img class="img-responsive" src="/assets/product10.jpg" alt=""></a></div>
+                      <div class="item"><a href="/public/images/assets/product14.jpg" target="imgBox"><img class="img-responsive" src="/public/images/assets/product14.jpg" alt=""></a></div>
+                      <div class="item"><a href="/public/images/images/assets/product10.jpg" target="imgBox"><img class="img-responsive" src="/public/images/assets/product10.jpg" alt=""></a></div>
+                      <div class="item"><a href="/public/images/images/assets/product12.jpg" target="imgBox"><img class="img-responsive" src="/public/images/assets/product12.jpg" alt=""></a></div>
+                      <div class="item"><a href="public/images/assets/product10.jpg" target="imgBox"><img class="img-responsive" src="/assets/product10.jpg" alt=""></a></div>
                     </div>
                   </div>
                 <div class="col-md-7 col-lg-6">
-                  <h2>Water proof jacket</h2>
+                   <input type="text" name="idp" class="hiddenValue" value="">
+                  <h2>veste</h2>
                   <div class="modal-price mb-4">
                   <span style="color: red;"> <strike>4,000 EGP</strike> </span> 
-                  <span>3,500 EGP </span>
+                  <span>00000000000 </span>
                 </div>
                   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione iste libero quisquam distinctio rem. Hic repellendus consequatur, perferendis fuga dolorem impedit velit maxime eius nobis delectus vero. Assumenda, voluptate quis!</p>
                   <div class="variet-selects">
@@ -144,6 +135,10 @@
                     <div class="modal-add-cart">
                       <input min="1" max="100" step="1" value="1" type="number" >
                       <button type="submit">add to cart</button>
+                      <form action="/delete_product" method="POST">
+                        <input type="text" id="idp" name="idp" class="hiddenValue" value="">
+                        <button type="submit" class="btn btn-danger">supp</button>
+                      </form>
                     </div>
                   </div>
                 </div>
@@ -153,6 +148,7 @@
           </div>
         </div>
         <!--End modal box-->
+        
          <%- include('../views/footer.ejs') %>
 <!--Bootstrap CDN-->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -163,5 +159,13 @@
 <!--Istope-->
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 <script src="/javascripts/js/main.js"></script>
+
+<script type="text/javascript">
+         $('.btnModal').click(function(){
+            var id  = $(this).attr('data-id')
+            $('#myModal .hiddenValue').val(id);
+
+    })
+    </script>
 </body>
 </html>

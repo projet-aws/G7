@@ -47,9 +47,18 @@ router.get('/shop', function(req, res, next) {
 		            res.render('shop',{data:produit,categorie});
 		        }
     		});
-    	}
-        
+    	}   
     });
   }
+});
+
+router.post('/delete_product', function(req, res){
+  conn.query('DELETE FROM products WHERE id='+req.body.idp, function(err, results){
+    if(err) throw err;
   });
+
+ console.log('Produit supprimé');
+  res.redirect('/shop');
+
+});
   module.exports = router;
