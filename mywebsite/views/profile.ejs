@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B&BShoop</title>
+    <!--Bootstrap CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!--Font awesome CDN-->
+    <script src="https://kit.fontawesome.com/1d20b47144.js" crossorigin="anonymous"></script>
+    <!--Styles-->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/animate.css">
+    <!--Owel carousel Style-->
+    <link rel="stylesheet" href="/stylesheets/owlcarousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/stylesheets/owlcarousel/owl.theme.default.min.css">
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="Magnific-Popup/magnific-popup.css">
+
+
+    
+</head>
+
+<body>
+
+<div class="container-fluid p-0 page-card">
+    <div class="page-profile">
+        <h3>Profile</h3>
+    </div>
+    <div   id="global" >  
+
+            <form action="/editer" method="post">
+                <% for(var i=0; i< data.length; i++) { %>
+
+            
+           
+                <div> 
+                    <label for="lname"  >Last name:</label>
+                    
+                     <input type="text" class="form-control"  name="Lname" value="<%=data[i].nom%>" disabled>
+        
+                </div>
+                <div> 
+                    
+                    <label for="fname">First name:</label>
+                    <input type="text" name="Fname" class="form-control" value="<%=data[i].prenom%>" disabled><br>
+                      
+                </div>   
+                <div> 
+                  
+                     <label for="fname">Phone Number:</label>
+                       
+                     <input type="text" id="tel" class="form-control" name="tel" value="<%=data[i].telephone%>" disabled>
+                    
+               </div>
+              <div> 
+                    
+                     <label for="fname">Adresse:</label>
+                        
+                     <input type="text" id="adr" name="adr" class="form-control" value="<%=data[i].adresse%>" disabled>
+                     
+              </div>
+               <div> 
+            
+                    <label for="fname">E-mail:</label>
+                      
+                      <input type="text"  class="form-control"  value="<%=data[i].email%>" disabled><br>
+                   
+               </div>
+              
+                      
+                    <div >
+                        <button type="button" id="edit" onclick="editable()" class="btn btn-primary  btn-lg btn-block"  >Edit</button>
+                        <button type="submit" id="save"  class="btn btn-success btn-lg btn-block" hidden>Save</button>
+                    </div>
+
+               
+           
+           
+                
+                
+        
+            <% } %>
+                </form>
+
+    </div>
+    
+ </div>
+
+
+
+<div class="profile-pic-div">
+   
+    <img src="/images/assets/image.jpg" id="photo">
+</div>
+<div>    
+    <label for="file" id="changer" > Choose Photo </label>
+    
+    <input type="file" id="file" class="form-control-file"  onclick="choose()" name="file">
+
+   
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    function editable() {
+        $('#tel').removeAttr('disabled');
+        $('#adr').removeAttr('disabled');
+        $('#save').removeAttr('hidden');
+        $('#edit').hide();
+
+    }
+
+    function choose()
+    {
+        
+    }
+</script>
+</body>
+
+</html>
