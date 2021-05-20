@@ -36,17 +36,8 @@ router.post('/editer' , function(req, res,next)
 });
         
 
-   
-const redirectionLogin = (req, res, next) => {
-    if (!req.session.userId) {
-        res.redirect('/login')
-    }
-    else {
-        next()
-    }
-}
 
-router.get('/profile', redirectionLogin , function (req, res, next) {
+router.get('/profile' , function (req, res, next) {
 
   
      
