@@ -19,6 +19,7 @@ var cartRouter = require('./routes/cart_route');
 var checkoutRouter = require('./routes/checkout_route');
 var footerRouter = require('./routes/footer_route');
 var profileRouter = require('./routes/profile_route');
+var newProductRouter = require('./routes/new_product_route');
 
 
 
@@ -67,6 +68,7 @@ app.use('/', cartRouter);
 app.use('/', checkoutRouter);
 app.use('/', footerRouter);
 app.use('/', profileRouter);
+app.use('/', newProductRouter);
 
 
 // catch 404 and forward to error handler
