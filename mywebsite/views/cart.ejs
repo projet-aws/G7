@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,8 +17,8 @@
     <!--Owel carousel Style-->
     <link rel="stylesheet" href="/stylesheets/owlcarousel/owl.carousel.min.css">
     <link rel="stylesheet" href="/stylesheets/owlcarousel/owl.theme.default.min.css">
- 
-   
+
+
 
 </head>
 
@@ -30,51 +30,59 @@
         </div>
         <div class="container-fluid container-narrow-card">
             <!--shopping cart area start -->
-            <div class="shopping_cart_area">
-                <div class="container">
-                    <form action="#">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="table_desc">
-                                    <div class="cart_page table-responsive">
-                                        <table>
-                                            <thead>
-                                                <tr>
-                                                    <th class="product_remove">Delete</th>
-                                                    <th class="product_thumb">Image</th>
-                                                    <th class="product_name">Product</th>
-                                                    <th class="product-price">Price</th>
-                                                    <th class="product_quantity">Quantity</th>
-                                                    <th class="product_total">Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="product_remove"><a href="#"><i
-                                                                class="fa fa-trash-o"></i></a></td>
-                                                    <td class="product_thumb"><a href="#"><img
-                                                                src="/images/assets/product14.jpg" alt=""></a></td>
-                                                    <td class="product_name"><a href="#">Handbag fringilla</a></td>
-                                                    <td class="product-price">£65.00</td>
-                                                    <td class="product_quantity"><label>Quantity</label> <input min="1"
-                                                            max="100" value="1" type="number"></td>
-                                                    <td class="product_total">£130.00</td>
+
+            <% if(result.length) { %>
+                <div class="shopping_cart_area">
+                    <div class="container">
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="table_desc">
+                                        <div class="cart_page table-responsive">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th class="product_remove">Delete</th>
+                                                        <th class="product_thumb">Image</th>
+                                                        <th class="product_name">Product</th>
+                                                        <th class="product-price">Price</th>
+                                                        <th class="product_quantity">Quantity</th>
+                                                        <th class="product_total">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <% for(var i=0; i< result.length; i++) { %>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="product_remove"><a href="#"><i
+                                                                        class="fa fa-trash-o"></i></a></td>
+                                                            <td class="product_thumb"><a href="#"> <img
+                                                                src="<%= result[i].image%>" alt=""></a>
+                                                            </td>
+                                                            <td class="product_name"><a href="#"><%= result[i].nomp%></a>
+                                                            </td>
+                                                            <td class="product-price"><%= result[i].prix%> €</td>
+                                                            <td class="product_quantity"><label>Quantity</label> <input
+                                                                    min="1" max="100" value="1" type="number"></td>
+                                                            <td class="product_total"><%= result[i].prix%> €</td>
 
 
-                                                </tr>
+                                                        </tr>
 
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="cart_submit">
-                                        <button type="submit">update cart</button>
+                                                    </tbody>
+                                                    <% } %>
+
+                                            </table>
+                                        </div>
+                                        <div class="cart_submit">
+                                            <button type="submit">commander</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                    </div>
                 </div>
-            </div>
-           
+                <% } %>
+
         </div>
 
 
@@ -98,7 +106,7 @@
             crossorigin="anonymous"></script>
         <!--Owel carousel js-->
         <script src="/stylesheets/owlcarousel/owl.carousel.min.js"></script>
-         <script src="/javascripts/js/main.js"></script>
+        <script src="/javascripts/js/main.js"></script>
 </body>
 
 </html>
