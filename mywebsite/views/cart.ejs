@@ -26,78 +26,89 @@
 </head>
 
 <body>
-    
-        
+
+
     <div class="overlay"></div>
     <div class="container-fluid p-0 page-card">
         <div class="header">
             <a href="/cart" class="logo">Panier<i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
             <div class="header-right">
-            <a class="log" href="/">Home</a>
-            <a href="/new_product" class="log">Product</a>
-            <a href="/shop" class="log">Shop</a>
-            <a href="/profile" class="log">Profil </a>
+                <a class="log" href="/">Home</a>
+                <a href="/new_product" class="log">Product</a>
+                <a href="/shop" class="log">Shop</a>
+                <a href="/profile" class="log">Profil </a>
             </div>
-        
-        <div class="container-fluid container-narrow-card">
-            <!--shopping cart area start -->
 
-            <% if(result.length) { %>
-                <div class="shopping_cart_area">
-                    <div class="container">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="table_desc">
-                                        <div class="cart_page table-responsive">
-                                            <table>
-                                                <thead>
-                                                    <tr>
-                                                        <th class="product_remove">Delete</th>
-                                                        <th class="product_thumb">Image</th>
-                                                        <th class="product_name">Product</th>
-                                                        <th class="product-price">Price</th>
-                                                        <th class="product_quantity">Quantity</th>
-                                                        <th class="product_total">Total</th>
-                                                    </tr>
-                                                </thead>
-                                                <% for(var i=0; i< result.length; i++) { %>
-                                                    <tbody>
+            <div class="container-fluid container-narrow-card">
+                <!--shopping cart area start -->
+
+                <% if(result.length) { %>
+                    <div class="shopping_cart_area">
+                        <div class="container">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="table_desc">
+                                            <div class="cart_page table-responsive">
+                                                <table>
+                                                    <thead>
                                                         <tr>
-                                                            <td class="product_remove"><a
-                                                                href="/cart?id=<%= result[i].idpanier%>"><i
-                                                                        class="fa fa-trash-o"></i></a></td>
-                                                            <td class="product_thumb"><a href="#"> <img
-                                                                src="<%= result[i].image%>" alt=""></a>
-                                                            </td>
-                                                            <td class="product_name"><a href="#"><%= result[i].nomp%></a>
-                                                            </td>
-                                                            <td class="product-price"><%= result[i].prix%> €</td>
-                                                            <td class="product_quantity"><label>Quantity</label> <input
-                                                                    min="1" max="100" value="1" type="number"></td>
-                                                            <td class="product_total"><%= result[i].prix%> €</td>
-
-
+                                                            <th class="product_remove">Delete</th>
+                                                            <th class="product_thumb">Image</th>
+                                                            <th class="product_name">Product</th>
+                                                            <th class="product-price">Price</th>
+                                                            <th class="product_quantity">Quantity</th>
+                                                            <th class="product_total">Total</th>
                                                         </tr>
+                                                    </thead>
+                                                    <% for(var i=0; i< result.length; i++) { %>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="product_remove"><a
+                                                                        href="/cart?id=<%= result[i].idpanier%>"><i
+                                                                            class="fa fa-trash-o"></i></a></td>
+                                                                <td class="product_thumb"><a href="#"> <img
+                                                                            src="<%= result[i].image%>" alt=""></a>
+                                                                </td>
+                                                                <td class="product_name"><a href="#">
+                                                                        <%= result[i].nomp%>
+                                                                    </a>
+                                                                </td>
+                                                                <td class="product-price">
+                                                                    <%= result[i].prix%> €
+                                                                </td>
+                                                                <td class="product_quantity"><label>Quantity</label>
+                                                                    <input min="1" max="100" value="1" type="number">
+                                                                </td>
+                                                                <td class="product_total">
+                                                                    <%= result[i].prix%> €
+                                                                </td>
 
-                                                    </tbody>
-                                                    <% } %>
 
-                                            </table>
-                                        </div>
-                                        <div class="cart_submit">
-                                            <button type="submit">commander</button>
+                                                            </tr>
+
+                                                        </tbody>
+                                                        <% } %>
+
+                                                </table>
+                                            </div>
+                                            <div class="cart_submit">
+                                                <button type="submit">commander</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                        </div>
                     </div>
-                </div>
-                <% } %>
+                    <% } %>
+
+            </div>
 
         </div>
 
 
+    </div>
+    
 
 
 
@@ -106,19 +117,21 @@
 
 
 
-        <!--Bootstrap CDN-->
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-            crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-            crossorigin="anonymous"></script>
-        <!--Owel carousel js-->
-        <script src="/stylesheets/owlcarousel/owl.carousel.min.js"></script>
-        <script src="/javascripts/js/main.js"></script>
+
+
+    <!--Bootstrap CDN-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!--Owel carousel js-->
+    <script src="/stylesheets/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/javascripts/js/main.js"></script>
 </body>
 
 </html>

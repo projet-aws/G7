@@ -19,100 +19,106 @@
     <link rel="stylesheet" href="Magnific-Popup/magnific-popup.css">
 
 
-    
+
 </head>
 
 <body>
 
-<div class="container-fluid p-0 page-card">
-    <div class="page-profile">
-        <h3>Profile</h3>
-    </div>
-    <div   id="global" >  
+    <div class="container-fluid p-0 page-card">
+            <div class="page-profile">
+                <h3>Profile</h3>
+            </div>
+            <div id="global">
 
-            <form action="/editer" method="post">
-                <% for(var i=0; i< data.length; i++) { %>
+                <form action="/editer" method="post">
+                    <% for(var i=0; i< data.length; i++) { %>
 
-            
-           
-                <div> 
-                    <label for="lname"  >Last name:</label>
-                    
-                     <input type="text" class="form-control"  name="Lname" value="<%=data[i].nom%>" disabled>
-        
-                </div>
-                <div> 
-                    
-                    <label for="fname">First name:</label>
-                    <input type="text" name="Fname" class="form-control" value="<%=data[i].prenom%>" disabled><br>
-                      
-                </div>   
-                <div> 
-                  
-                     <label for="fname">Phone Number:</label>
-                       
-                     <input type="text" id="tel" class="form-control" name="tel" value="<%=data[i].telephone%>" disabled>
-                    
-               </div>
-              <div> 
-                    
-                     <label for="fname">Adresse:</label>
-                        
-                     <input type="text" id="adr" name="adr" class="form-control" value="<%=data[i].adresse%>" disabled>
-                     
-              </div>
-               <div> 
-            
-                    <label for="fname">E-mail:</label>
-                      
-                      <input type="text"  class="form-control"  value="<%=data[i].email%>" disabled><br>
-                   
-               </div>
-              
-                      
-                    <div >
-                        <button type="button" id="edit" onclick="editable()" class="btn btn-primary btn-lg btn-block"  style="width: 150px;">Edit</button>
-                        <button type="submit" id="save"  class="btn btn-success btn-lg btn-block" hidden>Save</button>
-                    </div>
 
-               
-           
-           
-                
-                
-        
-            <% } %>
+
+                        <div>
+                            <label for="lname">Last name:</label>
+
+                            <input type="text" class="form-control" name="Lname" value="<%=data[i].nom%>" disabled>
+
+                        </div>
+                        <div>
+
+                            <label for="fname">First name:</label>
+                            <input type="text" name="Fname" class="form-control" value="<%=data[i].prenom%>"
+                                disabled><br>
+
+                        </div>
+                        <div>
+
+                            <label for="fname">Phone Number:</label>
+
+                            <input type="text" id="tel" class="form-control" name="tel" value="<%=data[i].telephone%>"
+                                disabled>
+
+                        </div>
+                        <div>
+
+                            <label for="fname">Adresse:</label>
+
+                            <input type="text" id="adr" name="adr" class="form-control" value="<%=data[i].adresse%>"
+                                disabled>
+
+                        </div>
+                        <div>
+
+                            <label for="fname">E-mail:</label>
+
+                            <input type="text" class="form-control" value="<%=data[i].email%>" disabled><br>
+
+                        </div>
+
+
+                        <div>
+                            <button type="button" id="edit" onclick="editable()"
+                                class="btn btn-primary btn-lg btn-block" style="width: 150px;">Edit</button>
+                            <button type="submit" id="save" class="btn btn-success btn-lg btn-block"
+                                hidden>Save</button>
+                        </div>
+
+
+
+
+
+
+
+                        <% } %>
                 </form>
 
-    </div>
-    
- </div>
+            </div>
 
+        </div>
 
-
-<div class="profile-pic-div">
    
-    <img src="https://cdn.discordapp.com/attachments/827519939006955531/844563064384389120/image.jpg" id="photo">
-</div>
 
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
 
-<script type="text/javascript">
-    function editable() {
-        $('#tel').removeAttr('disabled');
-        $('#adr').removeAttr('disabled');
-        $('#save').removeAttr('hidden');
-        $('#edit').hide();
+        <div class="profile-pic-div">
 
-    }
+            <img src="https://cdn.discordapp.com/attachments/827519939006955531/844563064384389120/image.jpg"
+                id="photo">
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
 
-    function choose()
-    {
-        
-    }
-</script>
+        <script type="text/javascript">
+            function editable() {
+                $('#tel').removeAttr('disabled');
+                $('#adr').removeAttr('disabled');
+                $('#save').removeAttr('hidden');
+                $('#edit').hide();
+
+            }
+
+            function choose() {
+
+            }
+        </script>
 </body>
 
 </html>
