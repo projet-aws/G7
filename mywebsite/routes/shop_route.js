@@ -50,6 +50,26 @@ router.get('/shop', function(req, res, next) {
     	}   
     });
   }
+
+  //insertion dans le panier
+  if (req.query.id === undefined) {
+    conn.query('SELECT id FROM products ORDER BY id desc', function (err, rows) {
+      p = rows;
+    });
+  } else {
+    conn.query('SELECT id FROM products ORDER BY id desc', function (err, rows){
+      if (err) throw err;
+      conn.query('INSERT INTO panier(idProduit,nomp,prix,image,idUser) SELECT id, nomProduit, prix, image, idur FROM products , user where id=' + req.query.id + ' AND idur=' + 2, function (err, result) {
+        if (err) throw err;
+      });
+      console.log('Produit ajoueter');
+      res.redirect('/shop');
+
+    });
+  }
+
+
+
 });
 
 router.post('/delete_product', function(req, res){

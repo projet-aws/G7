@@ -15,7 +15,7 @@ router.post('/editer' , function(req, res,next)
     var adr = req.body.adr;
     const { user } = res.locals
    
-    conn.query('update user set telephone=' + tel  +  ' , adresse="' + adr + '" where id=2'  + ' ;', function (err, rows) {
+    conn.query('update user set telephone=' + tel  +  ' , adresse="' + adr + '" where idur=2'  + ' ;', function (err, rows) {
 
         if (err) {
             console.log('error', err);
@@ -41,7 +41,7 @@ router.get('/profile' , function (req, res, next) {
 
   
      
-    conn.query('SELECT * FROM user where id=2'  , function (err, rows) {
+    conn.query('SELECT * FROM user where idur=2'  , function (err, rows) {
 
        
         if (err) {
