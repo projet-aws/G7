@@ -26,7 +26,7 @@
     <div class="overlay"></div>
     <div class="container-fluid p-0 page-card">
         <div class="bread-cumber text-center">
-            <h3>cart</h3>
+            <h3><a href="/cart">CART</a></h3>
         </div>
         <div class="container-fluid container-narrow-card">
             <!--shopping cart area start -->
@@ -53,7 +53,8 @@
                                                 <% for(var i=0; i< result.length; i++) { %>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="product_remove"><a href="#"><i
+                                                            <td class="product_remove"><a
+                                                                href="/cart?id=<%= result[i].idpanier%>"><i
                                                                         class="fa fa-trash-o"></i></a></td>
                                                             <td class="product_thumb"><a href="#"> <img
                                                                 src="<%= result[i].image%>" alt=""></a>

@@ -20,7 +20,7 @@ router.get('/cart', function (req, res, next) {
             });
 
             // supprimer un produit dans le panier
-            /*if (req.query.id === undefined) {
+            if (req.query.id === undefined) {
                 conn.query('SELECT * FROM panier where idUser=' + 2, function (err, rows) {
                     if (err) {
                         console.log('error', err);
@@ -43,7 +43,7 @@ router.get('/cart', function (req, res, next) {
                 });
             
                 
-              } */       
+              }       
             
             
     
