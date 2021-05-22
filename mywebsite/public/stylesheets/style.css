@@ -1354,7 +1354,7 @@ button {
 .product-details-inner .customer-review-stras > li:nth-child(1) {
   padding-left: 0;
 }
-.product-details-inner .customer-review-stras > li > i {
+.customer-review-stras > li > i {
   cursor: pointer;
   font-size: 11px;
   color: gold;
