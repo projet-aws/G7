@@ -70,6 +70,9 @@ app.use('/', footerRouter);
 app.use('/', profileRouter);
 app.use('/', newProductRouter);
 
+// Modification: Ajout du routeur pour les commentaires
+app.use('/reviews', require('./routes/reviews'));
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
